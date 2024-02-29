@@ -3,47 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COUNTDOWN TIMER</title>
+    <title>Countdown Timer</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="styled-image">
-    <img src="macbook.jpeg" alt="car"/>
+    <div class="home">
+        <div class="home--image">
+            <img src="macbook.jpeg" alt="car"/>
+        </div>
+        <div class="home--section">
+            <h2>A MAC BOOK  GIVE AWAY</h2>
+            <div class="section--text">
+                <h3> Giveaway Ends On</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    Magnam, quis distinctio!
+                     Nam aliquam accusamus officia voluptatem,
+                     ullam repudiandae doloribus cum sapiente, 
+                     perspiciatis nobis recusandae a sint illum,
+                      suscipit asperiores deserunt dolorum obcaecati optio.
+                       Exercitationem et sit corporis iusto quo ullam, 
+                      laboriosam vel ad accusamus veritatis sapiente qui 
+                      facere quod sequi?
+                </p>
+                <div class="timer-container">
+                    <div class="timer-item">
+                        <div class="timer-box" type="number" min="0" max="23" placeholder="0" id="days">00</div>
+                        <div class="timer-label">DAYS</div>
+                        
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-box" type="number" min="0" max="24" placeholder="0" id="hours">00</div>
+                        <div class="timer-label">HOURS</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-box" type="number" min="0" max="59" placeholder="0" id="minutes">00</div>
+                        <div class="timer-label">MINS</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-box" type="number" min="0" max="59" placeholder="0" id="seconds">00</div>
+                        <div class="timer-label">SECS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="image">
-    </div>
-    <h2>A MAC BOOK  GIVE AWAY</h2>
-    <h3> GIVE AWAY ENDS IN MARCH </h3>
-<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-    Magnam, quis distinctio!
-     Nam aliquam accusamus officia voluptatem,
-     ullam repudiandae doloribus cum sapiente, 
-     perspiciatis nobis recusandae a sint illum,
-      suscipit asperiores deserunt dolorum obcaecati optio.
-       Exercitationem et sit corporis iusto quo ullam, 
-      laboriosam vel ad accusamus veritatis sapiente qui 
-      facere quod sequi?</p>
-
-      <div class="timer-container">
-        <div class="timer-label">Days:</div>
-        <input class="timer-box" type="number" min="0" max="23" placeholder="0" id="days">
-    </div>
-    <div class="timer-container">
-        <div class="timer-label">Hours:</div>
-        <input class="timer-box" type="number" min="0" max="24" placeholder="0" id="hours">
-    </div>
-    <div class="timer-container">
-        <div class="timer-label">Minutes:</div>
-        <input class="timer-box" type="number" min="0" max="59" placeholder="0" id="minutes">
-    </div>
-    <div class="timer-container">
-        <div class="timer-label">Seconds:</div>
-        <input class="timer-box" type="number" min="0" max="59" placeholder="0" id="seconds">
-    </div>
-    <button onclick="startTimer()">START</button>
-    <div id="timer"></div>
-    
-
 <script src="script.js"></script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">

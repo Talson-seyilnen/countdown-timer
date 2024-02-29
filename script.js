@@ -1,18 +1,18 @@
-function startTimer() { 
-    var days = parseInt(document.getElementById("days").value) || 0; 
-    var hours = parseInt(document.getElementById("hours").value) || 0; 
-    var minutes = parseInt(document.getElementById("minutes").value) || 0; 
-    var seconds = parseInt(document.getElementById("seconds").value) || 0; 
-    var totalTime = days * 86400 + hours * 3600 + minutes * 60 + seconds; 
-    var timerInterval = setInterval(function() { 
-        if (totalTime <= 0) { 
-            clearInterval(timerInterval);
-            document.getElementById("timer").innerHTML = "Countdown finished!"; 
-            return; } 
-    var daysLeft = Math.floor(totalTime / 86400);
-    var hoursLeft = Math.floor((totalTime % 86400) / 3600); 
-    var minutesLeft = Math.floor((totalTime % 3600) / 60); 
-    var secondsLeft = totalTime % 60;
-    document.getElementById("timer").innerHTML = "Days: " + daysLeft + " Hours: " + hoursLeft + " Minutes: " + minutesLeft + " Seconds: " + secondsLeft; 
-    totalTime--; }, 1000); 
-}
+document.addEventListener("DOMContentLoaded", function() {
+    const targetDate = new Date("2024-05-25T00:00:00");
+    function updateTimer() {
+        const currentDate = new Date();
+        const difference = targetDate - currentDate;
+        
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+        document.getElementById("days").innerText = days.toString().padStart(2, '0');
+        document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+    }
+    updateTimer();
+    setInterval(updateTimer, 1000);
+});
