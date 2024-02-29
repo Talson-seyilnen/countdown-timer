@@ -26,20 +26,22 @@
 
       <div class="timer-container">
         <div class="timer-label">Days:</div>
-        <div class="timer-box" id="days">00 </div>
+        <input class="timer-box" type="number" min="0" max="23" placeholder="0" id="days">
     </div>
     <div class="timer-container">
         <div class="timer-label">Hours:</div>
-        <div class="timer-box" id="hours">00 </div>
+        <input class="timer-box" type="number" min="0" max="24" placeholder="0" id="hours">
     </div>
     <div class="timer-container">
         <div class="timer-label">Minutes:</div>
-        <div class="timer-box" id="minutes">00 </div>
+        <input class="timer-box" type="number" min="0" max="59" placeholder="0" id="minutes">
     </div>
     <div class="timer-container">
         <div class="timer-label">Seconds:</div>
-        <div class="timer-box" id="seconds">00 </div>
+        <input class="timer-box" type="number" min="0" max="59" placeholder="0" id="seconds">
     </div>
+    <button onclick="startTimer()">START</button>
+    <div id="timer"></div>
     
 
 <script src="script.js"></script>
