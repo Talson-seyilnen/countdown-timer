@@ -1,25 +1,18 @@
-var endTime = new Date();
-endTime.setDate(endTime.getDate() + 10); // Set end time 10 days from now
-
-function updateTimer() {
-    var now = new Date();
-    var timeDiff = endTime - now;
-
-    if (timeDiff <= 0) {
-        document.getElementById('days').textContent = "Days: 0";
-        document.getElementById('hours').textContent = "Hours: 0";
-        document.getElementById('minutes').textContent = "Minutes: 0";
-        document.getElementById('seconds').textContent = "Seconds: 0";
-        return;
-    }
-
-    var days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    var minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
-
-    document.getElementById('days').textContent = "Days: " + days;
-    document.getElementById('hours').textContent = "Hours: " + hours;
-    document.getElementById('minutes').textContent = "Minutes: " + minutes;
-    document.getElementById('seconds').textContent = "Seconds: " + seconds;
+function startTimer() { 
+    var days = parseInt(document.getElementById("days").value) || 0; 
+    var hours = parseInt(document.getElementById("hours").value) || 0; 
+    var minutes = parseInt(document.getElementById("minutes").value) || 0; 
+    var seconds = parseInt(document.getElementById("seconds").value) || 0; 
+    var totalTime = days * 86400 + hours * 3600 + minutes * 60 + seconds; 
+    var timerInterval = setInterval(function() { 
+        if (totalTime <= 0) { 
+            clearInterval(timerInterval);
+            document.getElementById("timer").innerHTML = "Countdown finished!"; 
+            return; } 
+    var daysLeft = Math.floor(totalTime / 86400);
+    var hoursLeft = Math.floor((totalTime % 86400) / 3600); 
+    var minutesLeft = Math.floor((totalTime % 3600) / 60); 
+    var secondsLeft = totalTime % 60;
+    document.getElementById("timer").innerHTML = "Days: " + daysLeft + " Hours: " + hoursLeft + " Minutes: " + minutesLeft + " Seconds: " + secondsLeft; 
+    totalTime--; }, 1000); 
 }
